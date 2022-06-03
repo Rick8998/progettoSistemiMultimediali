@@ -26,7 +26,7 @@ La rotazione sarà eseguita da una nuova classe, implementando l'interfaccia Tra
 
 L'obiettivo finale è visualizzare una sequenza di rotazioni nella stessa finestra, in modo da ottenere un'animazione.
 
-###### Sintetizzando:
+##### Sintetizzando:
 1. Imposta Theha = 0
 2. Crea un nuovo Jframe JF e riempilo con l'immagine iniziale (originalImage)
 3. Theta = Theta + ΔT (imposta ΔT come preferisci)
@@ -39,7 +39,7 @@ Lavorare su un'immagine mentre è attualmente visualizzata in JF porta a aretfac
 – Mentre è visualizzato il buffer 1, modifichiamo il buffer 2 e, alla fine, sostituiremo l'immagine in JF con l'immagine nel buffer 2
 – Mentre è visualizzato il buffer 2, modifichiamo il buffer 1 e, alla fine, sostituiremo l'immagine in JF con l'immagine nel buffer 1
 
-###### Algorithm Double Buffer
+##### Algorithm Double Buffer
 1. Imposta Theha = 0
 2. Crea un nuovo Jframe JF e riempilo con l'immagine iniziale (originalImage)
 3. Crea 2 buffer: B [0..1]
