@@ -20,7 +20,7 @@ Dopo la rotazione, potrebbero esserci pixel mancanti nell'immagine di destinazio
 Ci sono due possibili soluzioni:
 1. Sovracampionare l'immagine originale, ruotare la versione sovracampionata in un buffer temporaneo e infine sottocampionare il risultato ruotato
 2. invertire il problema: e per ogni pixel di destinazione (X', Y'), trovare quale pixel dell'immagine originale (X, Y) deve essere copiato in (X', Y')
-3. 
+
 ![immagine](https://user-images.githubusercontent.com/46086592/171802239-508d1a20-dfaa-472f-92df-45f46aa2c3b7.png)
 
 La rotazione sarà eseguita da una nuova classe, implementando l'interfaccia Transform
