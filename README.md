@@ -10,6 +10,7 @@ Il progetto può essere visto come un'operazione in due fasi:
 Operazione di rotazione di un'immagine attorno ad un punto centrale, dato un grado di rotazione Ɵ
 Considering the rotation center in the point (0, 0), an image can be rotated using the following rotation matrix:
 ![immagine](https://user-images.githubusercontent.com/46086592/171801781-20be7263-6f89-44a1-b3fe-c3210c8cb90e.png)
+
 Il centro di rotazione deve essere spostato in una posizione (Xc, Yc) = (larghezza/2, altezza/2)
 
 Durante la rotazione, si verifica il ritaglio dei pixels. Bisogna fare attenzione a non tracciare i pixel al di fuori dell'immagine di destinazione
