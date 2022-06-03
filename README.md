@@ -8,7 +8,8 @@ Il progetto può essere visto come un'operazione in due fasi:
 2. Utilizzare la classe implementata al punto 1 per eseguire l'animazione continua dell'immagine data in una finestra mobile
 
 Operazione di rotazione di un'immagine attorno ad un punto centrale, dato un grado di rotazione Ɵ
-Considering the rotation center in the point (0, 0), an image can be rotated using the following rotation matrix:
+Considerando il centro di rotazione nel punto (0, 0), un'immagine può essere ruotata utilizzando la seguente matrice di rotazione:
+
 ![immagine](https://user-images.githubusercontent.com/46086592/171801781-20be7263-6f89-44a1-b3fe-c3210c8cb90e.png)
 
 Il centro di rotazione deve essere spostato in una posizione (Xc, Yc) = (larghezza/2, altezza/2)
@@ -19,9 +20,11 @@ Dopo la rotazione, potrebbero esserci pixel mancanti nell'immagine di destinazio
 Ci sono due possibili soluzioni:
 1. Sovracampionare l'immagine originale, ruotare la versione sovracampionata in un buffer temporaneo e infine sottocampionare il risultato ruotato
 2. invertire il problema: e per ogni pixel di destinazione (X', Y'), trovare quale pixel dell'immagine originale (X, Y) deve essere copiato in (X', Y')
+3. 
 ![immagine](https://user-images.githubusercontent.com/46086592/171802239-508d1a20-dfaa-472f-92df-45f46aa2c3b7.png)
 
 La rotazione sarà eseguita da una nuova classe, implementando l'interfaccia Transform
+
 ![immagine](https://user-images.githubusercontent.com/46086592/171802357-1b29365e-a252-4416-b76c-1aba62a0311e.png)
 
 L'obiettivo finale è visualizzare una sequenza di rotazioni nella stessa finestra, in modo da ottenere un'animazione.
