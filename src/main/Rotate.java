@@ -22,12 +22,31 @@ public class Rotate implements Transform{
 	@Override
 	public void setSourceData(Object src) {
 		source= (BufferedImage)src;
-		//result= new BufferedImage(source.getWidth(), source.getHeight(), source.getType());
+		result= new BufferedImage(source.getWidth(), source.getHeight(), source.getType());
 	}
 
 	@Override
 	public void calculate() {
-		result= new BufferedImage(source.getWidth(), source.getHeight(), source.getType());
+		
+		double[][] matrix = invert(getMatrix());
+		for(int xi = 0; xi < source.getWidth(); xi++) {
+			for(int yi = 0; yi < source.getHeight(); yi++) {
+				int i = xi - Xc;
+				int j = yi - Yc;
+				int x = (int) (i*matrix[0][0] + j*matrix[1][0])+Xc;
+				int y = (int) (i*matrix[0][1] + j*matrix[1][1])+Yc;
+				int sample = 0;
+				int bands = source.getRaster().getNumBands();
+				for(int b = 0; b < bands; b++) {
+					if(x < 0 || x >= source.getWidth()) sample =0;
+					else if(y < 0 ||y >= source.getHeight()) sample = 0;
+					else sample = source.getRaster().getSample(x, y, b);
+					result.getRaster().setSample(xi, yi, b, sample);
+				}
+			}
+		}
+		/*
+		//result= new BufferedImage(source.getWidth(), source.getHeight(), source.getType());
 		// perform rotation and store results in result
 		//upsampling per evitare di perdere pixel durante la rotazione
 		double ratio = 2.1;
@@ -46,8 +65,7 @@ public class Rotate implements Transform{
 		for( x = tmp.getWidth()/2; x < tmp.getWidth(); x++) {
 			for( y = tmp.getHeight()/2; y < tmp.getHeight(); y++) {
 				for(int c = 0; c < band; c++) {
-					double pixel = tmp.getRaster().getSample((x+tmp.getWidth()/2), y+tmp.getHeight()/2, c);
-					System.out.println(c);
+					double pixel = tmp.getRaster().getSample((x+tmp.getWidth())/2, (y+tmp.getHeight())/2, c);
 					rotationMatrix(x, y);
 					Xp = (int)(Xp/ratio);
 					Yp= (int)(Yp/ratio);
@@ -56,7 +74,43 @@ public class Rotate implements Transform{
 					}
 				}
 			}			
-		}
+		}*/
+	}
+
+	private double[][] invert(double[][] matrix) {
+		double det=getDet(matrix);
+		double[][] trasp=traspose(matrix);
+		double[][] inverse=new double[2][2];
+		for(int i=0;i<2;i++)
+			for(int j=0;j<2;j++)
+				inverse[i][j]=Math.pow(-1, i+j)*trasp[i][j]/det;
+		return trasp;
+	}
+
+	private double[][] traspose(double[][] matrix) {
+		double trasp[][]=new double[2][2];
+		for(int i=0;i<2;i++)
+			for(int j=0;j<2;j++)
+				trasp[i][j]=matrix[2-i-1][2-j-1];
+		return trasp;
+	}
+
+	private double getDet(double[][] matrix) {
+		double a=matrix[0][0];
+		double b=matrix[1][0];
+		double c=matrix[0][1];
+		double d=matrix[1][1];
+		return a*d - b*c;
+	}
+
+	private double[][] getMatrix() {
+		double degree = Math.toRadians(theta);
+		double[][] matrix = new double[2][2];
+		matrix[0][0]=Math.cos(degree);
+		matrix[0][1]=-Math.sin(degree);
+		matrix[1][0]=Math.sin(degree);
+		matrix[1][1]=Math.cos(degree);
+		return matrix;
 	}
 
 	private void rotationMatrix(int x, int y) {

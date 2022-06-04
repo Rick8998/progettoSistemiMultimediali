@@ -28,7 +28,7 @@ public class Main {
 		Rotate imgRotation = new Rotate();
 		imgRotation.setSourceData(original);
 		imgRotation.setRotationAngle(0);
-		imgRotation.setCenterPoint((int)(original.getWidth()*1.05), (int)(original.getHeight()*1.05));
+		imgRotation.setCenterPoint((int)(original.getWidth()/2), (int)(original.getHeight()/2));
 		
 		JFrame frame = new JFrame("Image rotation");
 		JLabel label = new JLabel(new ImageIcon(original));
@@ -39,7 +39,7 @@ public class Main {
 		frame.setVisible(true);
 		
 		for(int i = 0; i < 100; i++) {
-			imgRotation.setRotationAngle(25*i);
+			imgRotation.setRotationAngle(45*i);
 			imgRotation.calculate();
 			doubleBuffer[currentBuffer] = (BufferedImage) imgRotation.getResult();
 			try {
