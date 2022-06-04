@@ -33,18 +33,15 @@ public class Rotate implements Transform{
 		double ratio = 2.1;
 		tmp = new BufferedImage((int)(source.getWidth()*ratio), (int)(source.getHeight()*ratio), source.getType());
 		int band = result.getRaster().getNumBands();
-		int i, j, x, y;
+		int x, y;
 		for( x = 0; x < tmp.getWidth(); x++) {
 			for( y = 0; y < tmp.getHeight(); y++) {
-				 i = (int) (x / ratio);
-				 j = (int) (y / ratio);
 				for(int c = 0; c < band; c++) {
-					int pixel = source.getRaster().getSample(i, j, c);
+					int pixel = source.getRaster().getSample((int)(x/ratio), (int)(y/ratio), c);
 					tmp.getRaster().setSample(x, y, c, pixel);
 				}
 			}
 		}
-		System.out.println(tmp.getWidth() + tmp.getHeight());
 		//rotazione dell'immagine
 		for( x = tmp.getWidth()/2; x < tmp.getWidth(); x++) {
 			for( y = tmp.getHeight()/2; y < tmp.getHeight(); y++) {
