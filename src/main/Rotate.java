@@ -44,12 +44,13 @@ public class Rotate implements Transform{
 				}
 			}
 		}
-		
+		System.out.println(tmp.getWidth() + tmp.getHeight());
 		//rotazione dell'immagine
 		for( x = tmp.getWidth()/2; x < tmp.getWidth(); x++) {
 			for( y = tmp.getHeight()/2; y < tmp.getHeight(); y++) {
 				for(int c = 0; c < band; c++) {
-					double pixel = tmp.getRaster().getSample((x+tmp.getWidth())/2, (y+tmp.getHeight())/2, c);
+					double pixel = tmp.getRaster().getSample((x+tmp.getWidth()/2), y+tmp.getHeight()/2, c);
+					System.out.println(c);
 					rotationMatrix(x, y);
 					Xp = (int)(Xp/ratio);
 					Yp= (int)(Yp/ratio);
