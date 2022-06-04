@@ -28,7 +28,7 @@ public class Rotate implements Transform{
 	@Override
 	public void calculate() {
 		// perform rotation and store results in result
-		
+		//upsampling per evitare di perdere pixel durante la rotazione
 		double ratio = 2.1;
 		tmp = new BufferedImage((int)(source.getWidth()*ratio), (int)(source.getHeight()*ratio), source.getType());
 		int band = result.getRaster().getNumBands();
@@ -43,6 +43,7 @@ public class Rotate implements Transform{
 			}
 		}
 		
+		//rotazione dell'immagine
 		for(int x = tmp.getWidth()/2; x < tmp.getWidth(); x++) {
 			for(int y = tmp.getHeight()/2; y < tmp.getHeight(); y++) {
 				for(int c = 0; c < band; c++) {
