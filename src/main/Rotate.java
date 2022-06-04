@@ -28,6 +28,7 @@ public class Rotate implements Transform{
 	@Override
 	public void calculate() {
 		// perform rotation and store results in result
+		
 		double ratio = 2.1;
 		tmp = new BufferedImage((int)(source.getWidth()*ratio), (int)(source.getHeight()*ratio), source.getType());
 		int band = result.getRaster().getNumBands();
@@ -36,7 +37,7 @@ public class Rotate implements Transform{
 				int i = (int) (x / ratio);
 				int j = (int) (y / ratio);
 				for(int c = 0; c < band; c++) {
-					int pixel = source.getRaster().getSample(i, y, c);
+					int pixel = source.getRaster().getSample(i, j, c);
 					tmp.getRaster().setSample(x, y, c, pixel);
 				}
 			}
