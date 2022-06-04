@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 
 public class Rotate implements Transform{
 	
-	BufferedImage source, result, tmp;
+	BufferedImage source, result, tmp, tmp2;
 	double theta;
 	int Xc, Yc;
 	private int Xp;
@@ -51,6 +51,7 @@ public class Rotate implements Transform{
 		//upsampling per evitare di perdere pixel durante la rotazione
 		double ratio = 2;
 		tmp = new BufferedImage((int)(source.getWidth()*ratio), (int)(source.getHeight()*ratio), source.getType());
+		tmp2 = new BufferedImage((int)(source.getWidth()), (int)(source.getHeight()), source.getType());
 		int band = result.getRaster().getNumBands();
 		
 		for(int x = 0; x < tmp.getWidth(); x++) {
