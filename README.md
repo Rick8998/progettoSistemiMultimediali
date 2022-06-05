@@ -68,6 +68,7 @@ Per calcolare la matrice inversa M:
 
 ![immagine](https://user-images.githubusercontent.com/46086592/172045000-39a29300-0243-4017-bba1-04a5b7c176ab.png)
 
+![immagine](https://user-images.githubusercontent.com/46086592/172045190-2c719e6f-0e74-46a6-ba72-d647e49d9823.png)
 
 4. determinare la matrice trasposta della matrice dei cofattori del unto 2, cioè scambiare le righe e le colonne
 5. moltiplicare la matrice ottenuta dal putno 3 per 1/determinante(M)
