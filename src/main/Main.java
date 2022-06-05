@@ -48,14 +48,8 @@ public class Main {
 				e.printStackTrace();
 			}
 			label.setIcon(new ImageIcon(doubleBuffer[currentBuffer]));
-			if(currentBuffer == 0) {
-				doubleBuffer[currentBuffer] = new BufferedImage(original.getWidth(), original.getHeight(), original.getType());
-				currentBuffer = 1;
-			}
-			else {
-				doubleBuffer[currentBuffer] = new BufferedImage(original.getWidth(), original.getHeight(), original.getType());
-				currentBuffer = 0;
-			}
+			if(currentBuffer == 0) currentBuffer = 1;
+			else currentBuffer = 0;
 		}
 	}
 }

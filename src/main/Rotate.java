@@ -27,7 +27,6 @@ public class Rotate implements Transform{
 
 	@Override
 	public void calculate() {
-		
 		double[][] matrix = invert(getMatrix());
 		for(int xi = 0; xi < source.getWidth(); xi++) {
 			for(int yi = 0; yi < source.getHeight(); yi++) {
@@ -45,8 +44,6 @@ public class Rotate implements Transform{
 				}
 			}
 		}
-		
-		
 	}
 
 	private void rotationMatrix(int x, int y) {
