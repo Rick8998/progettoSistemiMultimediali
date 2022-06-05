@@ -39,15 +39,17 @@ public class Main {
 		frame.setVisible(true);
 		
 		for(int i = 0; i < 100; i++) {
+			
 			imgRotation.setRotationAngle(50*i);
 			imgRotation.calculate();
 			doubleBuffer[currentBuffer] = (BufferedImage) imgRotation.getResult();
+			label.setIcon(new ImageIcon(doubleBuffer[currentBuffer]));
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			label.setIcon(new ImageIcon(doubleBuffer[currentBuffer]));
+			
 			if(currentBuffer == 0) currentBuffer = 1;
 			else currentBuffer = 0;
 		}

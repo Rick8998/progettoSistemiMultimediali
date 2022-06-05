@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 
 public class Rotate implements Transform{
 	
-	BufferedImage source, result, tmp, tmp2;
+	BufferedImage source, result, tmp;
 	double theta;
 	int Xc, Yc;
 	//private int Xp;
