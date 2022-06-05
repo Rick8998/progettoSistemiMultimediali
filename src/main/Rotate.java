@@ -67,6 +67,9 @@ public class Rotate implements Transform{
 		return trasp;
 	}
 
+	/*
+	 * Calcola il determinante della matrice
+	 */
 	private double getDet(double[][] matrix) {
 		double a=matrix[0][0];
 		double b=matrix[1][0];
@@ -74,7 +77,10 @@ public class Rotate implements Transform{
 		double d=matrix[1][1];
 		return a*d - b*c;
 	}
-
+	
+	/*
+	 * calcola i valori della matrice prendendo l’angolo in alto a sx, convertendolo in radianti ed calcolando coseni e seni:
+	 */
 	private double[][] getMatrix() {
 		double degree = Math.toRadians(theta);
 		double[][] matrix = new double[2][2];
