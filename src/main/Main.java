@@ -39,7 +39,7 @@ public class Main {
 		frame.setVisible(true);
 		
 		for(int i = 0; i < 100; i++) {
-			imgRotation.setRotationAngle(45*i);
+			imgRotation.setRotationAngle(50*i);
 			imgRotation.calculate();
 			doubleBuffer[currentBuffer] = (BufferedImage) imgRotation.getResult();
 			try {

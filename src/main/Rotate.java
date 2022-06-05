@@ -7,8 +7,8 @@ public class Rotate implements Transform{
 	BufferedImage source, result, tmp, tmp2;
 	double theta;
 	int Xc, Yc;
-	private int Xp;
-	private int Yp;
+	//private int Xp;
+	//private int Yp;
 	
 	public void setRotationAngle(double ratio) {
 		theta = ratio;
@@ -46,12 +46,12 @@ public class Rotate implements Transform{
 		}
 	}
 
-	private void rotationMatrix(int x, int y) {
+	/*private void rotationMatrix(int x, int y) {
 		double cos = Math.cos(theta);
 		double sin = Math.sin(theta);
 		Xp = (int) ((x*cos) + (y*-sin)) + Xc;
 		Yp = (int) ((x* cos) + (y*sin)) + Yc;
-	}
+	}*/
 
 	@Override
 	public Object getResult() {
