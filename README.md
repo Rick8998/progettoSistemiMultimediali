@@ -64,6 +64,11 @@ Per calcolare la matrice inversa M:
 3. il complemento algebrico (o cofattore) di un elemento di una matrice quadrata è il determinante della sottomatrice ottenuta eliminando riga e colonna a cui appartiene l'elemento, a cui si antepone:
   - il segno + se la somma tra gli indici di riga e colonna dell'elemento è pari
   - il segno - se la somma tra gli indici di riga e colonna dell'elemento è dispari
+  - il cofattore di M relativo alla posizione i,j è definito:
+
+![immagine](https://user-images.githubusercontent.com/46086592/172045000-39a29300-0243-4017-bba1-04a5b7c176ab.png)
+
+
 4. determinare la matrice trasposta della matrice dei cofattori del unto 2, cioè scambiare le righe e le colonne
 5. moltiplicare la matrice ottenuta dal putno 3 per 1/determinante(M)
 
