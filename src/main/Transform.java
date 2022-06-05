@@ -8,8 +8,6 @@ public interface Transform {
 
 	/**
 	 * setta e definisce i dati di origine:
-	 * <pre> Per la DCT ad 1 dimensione in input avrò un array 
-	 * Per la DCT a 2 dimensioni avrò una matrice</pre>
 	 * 
 	 * @param src di tipo Object
 	 * 
