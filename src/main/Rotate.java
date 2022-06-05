@@ -28,7 +28,7 @@ public class Rotate implements Transform{
 	@Override
 	public void calculate() {
 		
-		/*double[][] matrix = invert(getMatrix());
+		double[][] matrix = invert(getMatrix());
 		for(int xi = 0; xi < source.getWidth(); xi++) {
 			for(int yi = 0; yi < source.getHeight(); yi++) {
 				int i = xi - Xc;
@@ -44,46 +44,16 @@ public class Rotate implements Transform{
 					result.getRaster().setSample(xi, yi, b, sample);
 				}
 			}
-		}*/
-		
-		//result= new BufferedImage(source.getWidth(), source.getHeight(), source.getType());
-		// perform rotation and store results in result
-		//upsampling per evitare di perdere pixel durante la rotazione
-		double ratio = 2;
-		tmp = new BufferedImage((int)(source.getWidth()*ratio), (int)(source.getHeight()*ratio), source.getType());
-		tmp2 = new BufferedImage((int)(source.getWidth()), (int)(source.getHeight()), source.getType());
-		int band = result.getRaster().getNumBands();
-		
-		for(int x = 0; x < tmp.getWidth(); x++) {
-			for(int y = 0; y < tmp.getHeight(); y++) {
-				for(int c = 0; c < band; c++) {
-					int pixel = source.getRaster().getSample((int)(x/ratio), (int)(y/ratio), c);
-					tmp.getRaster().setSample(x, y, c, pixel);
-				}
-			}
 		}
 		
-		//rotazione dell'immagine
-		for(int x = 0; x < tmp.getWidth(); x++) {
-			for(int y = 0; y < tmp.getHeight(); y++) {
-				for(int c = 0; c < band; c++) {
-					double pixel = tmp.getRaster().getSample(x, y, c);
-					rotationMatrix(x, y);
-					Xp = (int)(Xp/ratio);
-					Yp= (int)(Yp/ratio);
-					if(Xp >= 0 && Yp >= 0 && Xp < result.getWidth() && Yp < result.getHeight() ) {
-						result.getRaster().setSample(Xp, Yp, c, pixel);
-					}
-				}
-			}			
-		}
+		
 	}
 
 	private void rotationMatrix(int x, int y) {
 		double cos = Math.cos(theta);
 		double sin = Math.sin(theta);
-		Xp = (int) ((x*cos) + (y*sin)) + Xc;
-		Yp = (int) ((x* -cos) + (y*sin)) + Yc;
+		Xp = (int) ((x*cos) + (y*-sin)) + Xc;
+		Yp = (int) ((x* cos) + (y*sin)) + Yc;
 	}
 
 	@Override
