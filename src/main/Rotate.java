@@ -4,9 +4,9 @@ import java.awt.image.BufferedImage;
 
 public class Rotate implements Transform{
 	
-	BufferedImage source, result, tmp;
-	double theta;
-	int Xc, Yc;
+	private BufferedImage source, result;
+	private double theta;
+	private int Xc, Yc;
 	
 	public void setRotationAngle(double ratio) {
 		theta = ratio;
