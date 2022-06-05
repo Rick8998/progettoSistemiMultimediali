@@ -56,7 +56,7 @@ public class Rotate implements Transform{
 		for(int i=0;i<2;i++)
 			for(int j=0;j<2;j++)
 				inverse[i][j]=Math.pow(-1, i+j)*trasp[i][j]/det;
-		return trasp;
+		return inverse;
 	}
 
 	private double[][] traspose(double[][] matrix) {
