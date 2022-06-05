@@ -66,7 +66,7 @@ Per calcolare la matrice inversa M:
 
 In questo modo si ottiene la matrice inversa
 
-. il complemento algebrico (o cofattore) di un elemento di una matrice quadrata è il determinante della sottomatrice ottenuta eliminando riga e colonna a cui appartiene l'elemento, a cui si antepone:
+- il complemento algebrico (o cofattore) di un elemento di una matrice quadrata è il determinante della sottomatrice ottenuta eliminando riga e colonna a cui appartiene l'elemento, a cui si antepone:
   - il segno + se la somma tra gli indici di riga e colonna dell'elemento è pari
   - il segno - se la somma tra gli indici di riga e colonna dell'elemento è dispari
   - il cofattore di M relativo alla posizione i,j è definito:
