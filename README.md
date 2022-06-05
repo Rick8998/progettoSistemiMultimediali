@@ -53,3 +53,19 @@ Lavorare su un'immagine mentre è attualmente visualizzata in JF porta a aretfac
 8. Riempi JF con B[currBuf]
 9. Scambia i buffer (modifica di conseguenza currBuf)
 10. Torna al punto 5
+
+
+
+
+## Approfondimento sul calcolo della matrice inversa
+Per calcolare la matrice inversa M:
+1. calcolare il determinante di M
+2. calcolare la matrice dei cofattori, cioè sostituire ogni elemento della matrice con il relativo cofattore
+3. il complemento algebrico (o cofattore) di un elemento di una matrice quadrata è il determinante della sottomatrice ottenuta eliminando riga e colonna a cui appartiene l'elemento, a cui si antepone:
+  - il segno + se la somma tra gli indici di riga e colonna dell'elemento è pari
+  - il segno - se la somma tra gli indici di riga e colonna dell'elemento è dispari
+4. determinare la matrice trasposta della matrice dei cofattori del unto 2, cioè scambiare le righe e le colonne
+5. moltiplicare la matrice ottenuta dal putno 3 per 1/determinante(M)
+
+In questo modo si ottine ela matrice inversa
+
