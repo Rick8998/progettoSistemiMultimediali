@@ -64,6 +64,6 @@ Lavorare su un'immagine mentre è attualmente visualizzata in JF porta a aretfac
 ![immagine](https://user-images.githubusercontent.com/46086592/175051210-476cf685-28aa-40fd-8fb5-f4f0ebfec486.png)
 
 Fonte
-[Rotazione] (https://www.youmath.it/domande-a-risposte/view/6230-rotazione.html)
+(https://www.youmath.it/domande-a-risposte/view/6230-rotazione.html)
 
 
