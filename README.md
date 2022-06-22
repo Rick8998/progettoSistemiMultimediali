@@ -56,21 +56,14 @@ Lavorare su un'immagine mentre è attualmente visualizzata in JF porta a aretfac
 
 
 
+### Approfondimento sulla rotazione
+![immagine](https://user-images.githubusercontent.com/46086592/175050921-35ad5656-f5c8-4642-b972-447fc7428b89.png)
 
-## Approfondimento sul calcolo della matrice inversa
-Per calcolare la matrice inversa M:
-1. calcolare il determinante di M
-2. calcolare la matrice dei cofattori, cioè sostituire ogni elemento della matrice con il relativo cofattore
-3. determinare la matrice trasposta della matrice dei cofattori del unto 2, cioè scambiare le righe e le colonne
-4. moltiplicare la matrice ottenuta dal putno 3 per 1/determinante(M)
+![immagine](https://user-images.githubusercontent.com/46086592/175051101-a8100218-c09d-4b41-bb68-005f355c1ebc.png)
 
-In questo modo si ottiene la matrice inversa
+![immagine](https://user-images.githubusercontent.com/46086592/175051210-476cf685-28aa-40fd-8fb5-f4f0ebfec486.png)
 
-- il complemento algebrico (o cofattore) di un elemento di una matrice quadrata è il determinante della sottomatrice ottenuta eliminando riga e colonna a cui appartiene l'elemento, a cui si antepone:
-  - il segno + se la somma tra gli indici di riga e colonna dell'elemento è pari
-  - il segno - se la somma tra gli indici di riga e colonna dell'elemento è dispari
-  - il cofattore di M relativo alla posizione i,j è definito:
+Fonte
+[Rotazione] (https://www.youmath.it/domande-a-risposte/view/6230-rotazione.html)
 
-![immagine](https://user-images.githubusercontent.com/46086592/172045000-39a29300-0243-4017-bba1-04a5b7c176ab.png)
 
-![immagine](https://user-images.githubusercontent.com/46086592/172045190-2c719e6f-0e74-46a6-ba72-d647e49d9823.png)
