@@ -56,7 +56,7 @@ Lavorare su un'immagine mentre è attualmente visualizzata in JF porta a aretfac
 
 
 
-### Approfondimento sulla rotazione
+### Approfondimento sulla rotazione di una figura geometrica in un piano cartesiano
 ![immagine](https://user-images.githubusercontent.com/46086592/175050921-35ad5656-f5c8-4642-b972-447fc7428b89.png)
 
 ![immagine](https://user-images.githubusercontent.com/46086592/175051101-a8100218-c09d-4b41-bb68-005f355c1ebc.png)
