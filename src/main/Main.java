@@ -27,7 +27,7 @@ public class Main {
 		
 		Rotate imgRotation = new Rotate();
 		imgRotation.setSourceData(original);
-		imgRotation.setRotationAngle(0);
+		//imgRotation.setRotationAngle(0);
 		imgRotation.setCenterPoint((int)(original.getWidth()/2), (int)(original.getHeight()/2));
 		
 		JFrame frame = new JFrame("Image rotation");
