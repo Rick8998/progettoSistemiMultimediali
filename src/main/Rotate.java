@@ -35,6 +35,8 @@ public class Rotate implements Transform{
 					if((new_i_Val < source.getWidth() && new_j_Val < source.getHeight()) && (new_i_Val >= 0 && new_j_Val >= 0)) {
 						double pxl = source.getRaster().getSample((int) new_i_Val, (int) new_j_Val, numBands);
 						result.getRaster().setSample(i, j, numBands, pxl);
+					} else {
+						result.getRaster().setSample(i, j, numBands, 0);
 					}
 				}
 			}
